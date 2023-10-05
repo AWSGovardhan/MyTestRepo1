@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Language Welcome</title>
+</head>
+<body>
+    <h1 id="welcome-message">Welcome!</h1>
+    
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('fr')">French</button>
+    <button onclick="changeLanguage('es')">Spanish</button>
+
+    <script>
+        // Language strings
+        const languages = {
+            en: "Welcome!",
+            fr: "Bienvenue!",
+            es: "¡Bienvenido!"
+        };
+
+        // Function to change the language
+        function changeLanguage(lang) {
+            const welcomeMessage = document.getElementById('welcome-message');
+            if (languages.hasOwnProperty(lang)) {
+                welcomeMessage.textContent = languages[lang];
+            }
+        }
+    </script>
+</body>
+</html>
