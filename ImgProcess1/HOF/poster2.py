@@ -45,6 +45,7 @@ def resize_poster(poster_content, target_width, target_height):
     image = image.resize((target_width, target_height), Image.ANTIALIAS)
     poster.paste(image, (0, 0))
 
+
     poster.save(f'poster_{target_platform}.jpg')
 
 # Resize the poster for the chosen platform
