@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Web App</title>
+</head>
+<body>
+    <h1>Welcome to My Web App</h1>
+    <form id="data-form">
+        <input type="text" id="data-input" placeholder="Enter data">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        document.querySelector('#data-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const data = document.querySelector('#data-input').value;
+            const response = await fetch('/process_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ data }),
+            });
+            const result = await response.json();
+            document.querySelector('#result').textContent = result.message;
+        });
+    </script>
+</body>
+</html>
