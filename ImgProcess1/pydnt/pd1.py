@@ -1,15 +1,15 @@
 import uuid
 from datetime import date
 import requests
-# from pydantic import BaseModel
+from pydantic import BaseModel
 
-import pydantic
+# import pydantic
 
 url = 'https://raw.githubusercontent.com/bugbytes-io/datasets/master/students_v1.json'
 data = requests.get(url).json()
 
 # define Pydantic model class
-class Student(pydantic.BaseModel):
+class Student(BaseModel):
     # def __init__(self,s):
     #     super(Student,self).__init__(s)
 
